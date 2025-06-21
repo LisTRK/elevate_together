@@ -1,0 +1,223 @@
+.modal-open {
+  overflow: hidden;
+}
+.button-header {
+  /* Стилі базові для кнопки */
+  all: unset;
+}
+.header {
+  position: absolute;
+  top: 32px;
+  width: 100%;
+}
+.header-container {
+  /* Стилі для контейнера */
+  display: flex;
+  justify-content: space-between;
+}
+.header-link {
+  display: flex;
+  gap: 8px;
+}
+.header-logo {
+  /* Стилі для обгортки логотипа */
+  display: flex;
+  gap: 8px;
+}
+.header-logo-bc {
+  /* Стилі для логотипа*/
+  display: block;
+  border-radius: 18px;
+  width: 80px;
+  height: 80px;
+}
+
+.header-logo-jefferson {
+  /* Стилі для призвища jefferson логотипа*/
+  font-size: 19px;
+  line-height: 19px;
+}
+
+.header-nav {
+  /* Стилі для навігації */
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+@media (min-width: 768px) {
+  .header-nav {
+    flex-direction: row;
+  }
+}
+.header-nav-menu {
+  display: none;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .header-nav-menu {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+.header-nav-overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.header-menu-title {
+  height: 39px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.header-nav-menu-list {
+  display: none;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .header-nav-menu-list {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 150ms ease-in-out;
+    transition-property: opacity, visibility;
+  }
+}
+
+.header-nav-menu-list.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: 300ms ease-in-out;
+  transition-property: opacity;
+}
+
+.header-nav-menu-item {
+  height: 19px;
+}
+
+.header-order {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header-order {
+    display: block;
+  }
+}
+
+.header-order a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  width: 163px;
+  height: 55px;
+  background-color: #ed3b44;
+}
+
+.header-burger {
+  /* Стилі для бургер-меню */
+  width: 28px;
+  height: 28px;
+  background: inherit;
+}
+@media (min-width: 768px) {
+  .header-burger {
+    display: none;
+  }
+}
+
+.header-dropdown-wrapper {
+  /* Стилі для мобільного меню */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('../img/mobile-menu-bc.png');
+  background-size: cover;
+  transform: translateX(100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-out,
+    visibility 0.5s cubic-bezier(0.19, 0.4, 0.59, 0.89),
+    transform 0.5s ease-in-out;
+  z-index: 1000; /* Щоб меню було поверх інших елементів */
+}
+
+.header-dropdown-wrapper.active {
+  /* Стилі для активного мобільного меню (wrapper) */
+  display: flex;
+  transform: translateX(0); /* Кінцеве положення */
+  opacity: 1;
+  visibility: inherit;
+}
+@media (min-width: 768px) {
+  .header-dropdown-wrapper.active {
+    display: none;
+  }
+}
+
+.header-dropdown-wrapper li {
+  text-align: center;
+}
+
+.header-dropdown-wrapper a {
+  border-bottom: 2px solid;
+  /* padding-bottom: 3px; */
+}
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+/* Медіа-запит для десктопних екранів */
+@media (min-width: 769px) {
+  .header-dropdown-wrapper {
+    display: none;
+  }
+}
+
+.header-close-btn {
+  /* Стилі для закриття мобільного меню */
+  position: absolute;
+  top: 32px;
+  right: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.header-dropdown {
+  /* Стилі для мобільного меню */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin: auto;
+}
+.header-order-burger {
+  display: block;
+  margin: 0 auto 64px;
+}
+
+.header-order-burger a {
+  border-radius: 60px;
+  padding: 18px 24px;
+  /* width: 163px;
+  height: 55px; */
+  background-color: #ed3b44;
+  border: none;
+}
