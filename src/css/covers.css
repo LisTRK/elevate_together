@@ -10,10 +10,11 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.covers > .container {
+.container-covers {
   position: relative;
   padding: 0;
   overflow: hidden;
+  width: 100%;
   background: radial-gradient(
       circle 15em at 20% 30%,
       rgba(237, 59, 68, 0.6),
@@ -42,10 +43,10 @@
   white-space: nowrap;
   animation-duration: 15s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-.covers-list.show .covers-item {
+.container-covers.show .covers-item {
   animation-name: coversItem;
 }
 .covers-img {
@@ -72,7 +73,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .covers > .container {
+  .container-covers {
     height: 960px;
   }
   .covers-list {
@@ -85,7 +86,7 @@
   }
 }
 @media screen and (min-width: 1440px) {
-  .covers > .container {
+  .container-covers {
     background: radial-gradient(
         circle 15em at 10% 20%,
         rgba(237, 59, 68, 0.6),

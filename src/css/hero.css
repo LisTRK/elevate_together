@@ -22,6 +22,9 @@ section.hero-section {
   color: #fafafa;
   margin-bottom: 212px;
 }
+.hero-title-hello {
+  display: block;
+}
 
 .hero-list {
   display: flex;
@@ -42,7 +45,8 @@ section.hero-section {
   border-radius: 60px;
   width: 37px;
   height: 37px;
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-link > a {

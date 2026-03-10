@@ -1,23 +1,16 @@
-const section = document.querySelector('.covers .container');
-const animRows = document.querySelectorAll('.covers-list');
+const sectionCovers = document.querySelector('.container-covers');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(
-    entry => {
-      if (entry.isIntersecting) {
-        animRows.forEach(row => {
-          row.classList.add('show');
-        });
-      } else {
-        animRows.forEach(row => {
-          row.classList.remove('show');
-        });
-      }
-    },
-    {
-      threshold: 0.5,
+const observer = new IntersectionObserver(
+  entries => {
+    if (entries[0].isIntersecting) {
+      sectionCovers.classList.add('show');
+    } else {
+      sectionCovers.classList.remove('show');
     }
-  );
-});
+  },
+  {
+    threshold: 0.1,
+  }
+);
 
-observer.observe(section);
+observer.observe(sectionCovers);

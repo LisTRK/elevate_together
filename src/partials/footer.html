@@ -1,3 +1,65 @@
-<footer>
-  <div class="container"></div>
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="img-t">
+      <div class="title-img">
+        <img
+          class="img-footer"
+          alt="my photo"
+          src="./img/logo.webp"
+          srcset="./img/logo.webp 1x, ./img/logo_@2x.webp 2x"
+        />
+        <h2 class="title-footer">LET’S <span class="highlight">WORK</span></h2>
+      </div>
+      <h2 class="together">TOGETHER</h2>
+    </div>
+    <form class="div-button-form" id="order">
+      <div class="div-input">
+        <input
+          id="emailInput"
+          class="footer-input"
+          type="email"
+          autocomplete="off"
+          placeholder="clients@gmail.com"
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          required
+        />
+        <p id="emailMessage" class="input-message"></p>
+      </div>
+      <input
+        type="text"
+        autocomplete="off"
+        id="textInput"
+        class="footer-comment"
+        placeholder="comments"
+        maxlength="100"
+      />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+
+    <ul class="contact-menu">
+      <li class="list-item">
+        <a class="tel-button mail" href="mailto:lloydjefferson@gmail.com"
+          >lloydjefferson@gmail.com</a
+        >
+      </li>
+      <li class="list-item">
+        <a class="tel-button tel" href="tel:+380111111111">+380 11 111 11 11</a>
+      </li>
+    </ul>
+
+    <div class="backdrop">
+      <div class="footer-modal">
+        <button type="button" class="modal-btn">
+          <svg class="footer-close-icon">
+            <use href="./img/sprites.svg#close_icon"></use>
+          </svg>
+        </button>
+        <h3 class="modal-title">Thank you for your interest in cooperation!</h3>
+        <p class="modal-p">
+          The manager will contact you shortly to discuss further details and
+          opportunities for cooperation. Please stay in touch.
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>

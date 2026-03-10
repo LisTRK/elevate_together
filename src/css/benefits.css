@@ -42,12 +42,11 @@
   height: 270px;
   background: #242527;
 
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .benefits-item:hover {
-  width: 344px;
-  transform: scale(1.03);
+  transform: scale(1.03, 1.02);
 }
 
 @media screen and (min-width: 1440px) {
@@ -95,11 +94,11 @@
   letter-spacing: -0.02em;
   color: #fafafa;
   margin-bottom: 8px;
+  transition: color 0.3s ease-in-out;
 }
 
 .benefits-item:hover .benefits-subtitle {
   color: #ed3b44;
-  transition: all 0.3s ease;
 }
 
 .benefits-paragraph {
@@ -108,11 +107,11 @@
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.6);
+  transition: color 0.3s ease;
 }
 
 .benefits-item:hover .benefits-paragraph {
   color: #fafafa;
-  transition: all 0.3s ease;
 }
 
 .benefits-order-button {
@@ -123,11 +122,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .benefits-order-button:hover,
 .benefits-order-button:active {
-  border: 1px solid #fafafa;
+  border-color: #fafafa;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 @media screen and (min-width: 1440px) {

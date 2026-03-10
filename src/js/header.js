@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 
 const burgerEl = document.querySelector('.header-burger');
 const burgerLinkEl = document.querySelectorAll('.header-dropdown-item a');
+const orderRef = document.querySelector('.header-order-burger a');
 const dropdownEl = document.querySelector('.header-dropdown-wrapper');
 const closeMenuBtnEl = document.querySelector('.header-close-btn');
 const menuBtnEl = document.querySelector('.header-menu-title');
@@ -19,7 +20,9 @@ function showMenuMobile() {
     burgerEl.removeEventListener('click', showMenuMobile); // Видаляємо слухач з бургеру, щоб уникнути повторних кліків
     burgerLinkEl.forEach(link => {
       link.addEventListener('click', linkListenerBurger);
-    }); // Додаємо слухачів на посилання пунктів дроп меню
+    });
+    orderRef.addEventListener('click', linkListenerBurger);
+    // Додаємо слухачів на посилання пунктів дроп меню
     document.body.classList.add('modal-open'); // Додаємо клас, щоб не було скрола
   } catch (error) {
     console.log(error);
@@ -54,7 +57,9 @@ function linkListenerBurger() {
     closeMenuBtnFun();
     burgerLinkEl.forEach(link => {
       link.removeEventListener('click', linkListenerBurger);
-    }); // Видаляємо слухачів з посиланнь пунктів дроп меню
+    });
+    orderRef.removeEventListener('click', linkListenerBurger);
+    // Видаляємо слухачів з посиланнь пунктів дроп меню
   } catch (error) {
     console.log(error);
     console.log(error.message);
@@ -69,6 +74,9 @@ function linkListenerBurger() {
 // ф-я показу меню таблет та десктоп
 function showMenuTabletDesktop(event) {
   try {
+    // menuItemEl.classList.add('active');
+    // event.stopPropagation(); //зупиняємо евент, щоб неспрацювало закриття меню
+    // document.addEventListener('click', closeMenuTabletDesktop);
     event.stopPropagation();
 
     if (menuItemEl.classList.contains('active')) {
